@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  brew-audit-and-test:
+    runs-on: macos-14
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v4
+
+      - name: Tap repository
+        run: brew tap --force-auto-update "${GITHUB_REPOSITORY}"
+
+      - name: Audit formula
+        run: brew audit --strict Formula/agentspec.rb
+
+      - name: Install formula
+        run: brew install --build-from-source agentspec || brew install agentspec
+
+      - name: Test formula
+        run: brew test agentspec

@@ -1,0 +1,6 @@
+# Tool formulas
+/Formula/agentspec.rb @jasnross
+
+# Shared tap governance files
+/README.md @jasnross
+/CODEOWNERS @jasnross
