@@ -17,7 +17,7 @@ jobs:
         run: brew tap "${GITHUB_REPOSITORY}"
 
       - name: Audit formula
-        run: brew audit --strict Formula/agentspec.rb
+        run: brew audit --strict agentspec
 
       - name: Install formula
         run: brew install --build-from-source agentspec || brew install agentspec
