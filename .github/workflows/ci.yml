@@ -19,6 +19,13 @@ jobs:
           mkdir -p "$(dirname "${TAP_DIR}")"
           ln -s "${GITHUB_WORKSPACE}" "${TAP_DIR}"
 
+      # Homebrew refuses to load formulae from a third-party tap unless the
+      # tap or the formula is trusted. Trust the single formula this workflow
+      # exercises rather than the whole tap, so a future formula added here
+      # does not inherit trust implicitly.
+      - name: Trust formula
+        run: brew trust --formula jasnross/tap/agentspec
+
       - name: Audit formula
         run: brew audit --strict agentspec
 
