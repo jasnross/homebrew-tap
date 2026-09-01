@@ -5,18 +5,18 @@ class Agentspec < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jasnross/agentspec/releases/download/v0.4.0/agentspec-v0.4.0-aarch64-apple-darwin.tar.gz"
-      sha256 "77d7ae54e428b209f5561e4df87880d8fffb9088202910cdb4dbee6f1ce1c379"
+      url "https://github.com/jasnross/agentspec/releases/download/v0.5.0/agentspec-v0.5.0-aarch64-apple-darwin.tar.gz"
+      sha256 "e48d23a112d749f8ec57c59c5e87a4d862d345e75b88d1e2940c7f5146cd2406"
     else
-      url "https://github.com/jasnross/agentspec/releases/download/v0.4.0/agentspec-v0.4.0-x86_64-apple-darwin.tar.gz"
-      sha256 "2c2e38796052073ccac78471855927af7ecd5e78741ab17c2669356604e98fb5"
+      url "https://github.com/jasnross/agentspec/releases/download/v0.5.0/agentspec-v0.5.0-x86_64-apple-darwin.tar.gz"
+      sha256 "dca85eac05d7bdc173df0ce8943cb96299eced77ca9e1c5679d05af8066eebed"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/jasnross/agentspec/releases/download/v0.4.0/agentspec-v0.4.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c1ae83f775d50c81354c9c623449b7623902632567492f8065574a0a7ad5af3b"
+      url "https://github.com/jasnross/agentspec/releases/download/v0.5.0/agentspec-v0.5.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "bb8a5b4a03dc47a32090949f9d8eaba9356c0272133f55d5d17013329dd9dc47"
     else
       odie "agentspec binaries are currently published only for x86_64 Linux"
     end
